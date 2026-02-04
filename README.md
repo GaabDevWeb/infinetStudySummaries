@@ -1,3 +1,5 @@
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=FAFAFA&height=120&section=header"/>
+
 # InfinetAulas
 
 Site estático que renderiza resumos de aulas em Markdown, organizados por disciplina e por aula.
@@ -189,3 +191,6 @@ Sem esse passo, novas aulas não aparecem na navegação.
 ---
 
 Se o projeto foi útil para seus estudos, deixe uma estrela ⭐ no repositório.
+
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=FAFAFA&height=120&section=footer"/>
+
