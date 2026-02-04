@@ -1,0 +1,7 @@
+{
+  "name": "infinet-aulas",
+  "private": true,
+  "scripts": {
+    "atualizar-aulas": "node scripts/build-disciplinas.js"
+  }
+}

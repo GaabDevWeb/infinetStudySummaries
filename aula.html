@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula — Resumos de aulas</title>
+  <link rel="icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="shortcut icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/pages/aula.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+</head>
+<body>
+  <a href="index.html" class="layout-logo" aria-label="Página inicial">
+    <img src="public/images/PzLogo.png" alt="Pz Infinet Logo">
+  </a>
+  <nav class="layout-navbar layout-navbar-right">
+    <a href="index.html">Home</a>
+    <a href="resumos.html" class="active">Resumos</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+  <main class="layout-main">
+    <div class="aula-page layout-container">
+      <p id="aula-breadcrumb" class="aula-breadcrumb" aria-hidden="false"></p>
+      <div id="aula-error" class="aula-error" hidden></div>
+      <div id="aula-content" class="aula-content" hidden></div>
+      <div id="aula-prev-next" class="aula-prev-next" hidden></div>
+    </div>
+  </main>
+
+  <footer class="layout-footer">
+    <p>Este projeto foi útil? Deixe uma <a href="https://github.com/GaabDevWeb/infinetStudySummaries" target="_blank" rel="noopener noreferrer">estrela no GitHub</a> ⭐</p>
+  </footer>
+
+  <script src="src/js/global.js"></script>
+  <script src="src/js/disciplinas.js"></script>
+  <script src="src/js/pages/aula.js"></script>
+</body>
+</html>

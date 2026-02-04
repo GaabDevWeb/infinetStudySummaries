@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumos</title>
+  <link rel="icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="shortcut icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/pages/resumos.css">
+</head>
+<body class="page-resumos">
+  <a href="index.html" class="layout-logo" aria-label="Página inicial">
+    <img src="public/images/PzLogo.png" alt="Pz Infinet Logo">
+  </a>
+  <nav class="layout-navbar layout-navbar-right">
+    <a href="index.html">Home</a>
+    <a href="resumos.html" class="active">Resumos</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+  <main class="layout-main">
+    <div class="resumos-page layout-container">
+      <div class="resumos-hero">
+        <h1>Resumos por disciplina</h1>
+        <p>Selecione uma disciplina para acessar os resumos das aulas.</p>
+      </div>
+      <aside class="resumos-sidebar" aria-label="Disciplinas">
+        <div id="resumos-cards" class="resumos-cards"></div>
+      </aside>
+      <div class="resumos-content" aria-live="polite">
+        <p id="resumos-placeholder" class="resumos-placeholder">Selecione uma disciplina</p>
+        <div id="resumos-aulas-wrap" class="resumos-aulas-wrap" aria-hidden="true">
+          <ul id="resumos-aulas-list" class="resumos-aulas-list"></ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="layout-footer">
+    <p>Este projeto foi útil? Deixe uma <a href="https://github.com/GaabDevWeb/infinetStudySummaries" target="_blank" rel="noopener noreferrer">estrela no GitHub</a> ⭐</p>
+  </footer>
+
+  <script src="src/js/global.js"></script>
+  <script src="src/js/disciplinas.js"></script>
+  <script src="src/js/pages/resumos.js"></script>
+</body> 
+</html>

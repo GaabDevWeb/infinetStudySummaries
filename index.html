@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="shortcut icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/pages/home.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+</head>
+<body>
+  <a href="index.html" class="layout-logo" aria-label="Página inicial">
+    <img src="public/images/PzLogo.png" alt="Pz Infinet Logo">
+  </a>
+  <nav class="layout-navbar layout-navbar-right" aria-label="Navegação principal">
+    <a href="index.html" class="active">Home</a>
+    <a href="resumos.html">Resumos</a>
+    <a href="sobre.html">Sobre</a>
+  </nav>
+
+  <main class="layout-main home-main">
+    <section class="hero" aria-label="Apresentação do projeto">
+      <div class="hero-inner layout-container">
+        <div class="hero-text">
+          <h1>Resumos de aulas</h1>
+          <p>Este projeto transforma transcrições completas de aulas em material de estudo estruturado, usando modelos de linguagem aplicados com um <span class="prompt-hover" id="prompt-trigger">prompt</span> padronizado. O conteúdo é organizado por disciplina e aula, em um formato simples, acessível e pensado para quem realmente precisa estudar, não reassistir tudo de novo.</p>
+          <a href="resumos.html" class="btn">Explorar os resumos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="layout-footer">
+    <p>Este projeto foi útil? Deixe uma <a href="https://github.com/GaabDevWeb/infinetStudySummaries" target="_blank" rel="noopener noreferrer">estrela no GitHub</a> ⭐</p>
+  </footer>
+
+  <script src="src/js/global.js"></script>
+  <script src="src/js/pages/home.js"></script>  
+</body>
+</html>

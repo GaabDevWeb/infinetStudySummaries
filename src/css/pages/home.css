@@ -1,0 +1,460 @@
+/* ============================================
+   HOME — Design moderno e criativo
+   Página inicial com animações suaves
+   ============================================ */
+
+/* --- Variáveis específicas da página --- */
+:root {
+  --home-accent: #A3A3A3;
+  --home-accent-bright: #D4D4D4;
+  --home-overlay: rgba(10, 10, 10, 0.5);
+  --home-shadow: rgba(0, 0, 0, 0.4);
+  --home-shadow-hover: rgba(0, 0, 0, 0.6);
+  --home-card-bg: rgba(10, 10, 10, 0.95);
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Layout principal --- */
+.home-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 3rem;
+  background-image: url('/public/images/back.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg);
+  position: relative;
+}
+
+/* Overlay sutil para melhor legibilidade */
+.home-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--home-overlay);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Hero section --- */
+.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-height: 0;
+  padding: clamp(var(--space-4), 8vh, 6rem) 0;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.hero-inner {
+  display: block;
+  width: 100%;
+}
+
+.home-main .hero-inner.layout-container {
+  margin-left: 100px;
+  margin-right: auto;
+  padding-left: 0;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 42rem;
+}
+
+/* Título com gradiente e animação */
+.hero-text h1 {
+  margin: 0 0 var(--space-3);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--text) 0%, var(--home-accent-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 0.8s ease-out 0.1s backwards;
+}
+
+/* Parágrafo descritivo */
+.hero-text p {
+  margin: 0 0 var(--space-4);
+  max-width: 36rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 0.9;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+/* Palavra "prompt" interativa */
+.hero-text p .prompt-hover {
+  cursor: pointer;
+  color: var(--home-accent-bright);
+  text-decoration: underline;
+  text-decoration-color: rgba(163, 163, 163, 0.4);
+  text-underline-offset: 3px;
+  transition: all var(--transition-smooth);
+  position: relative;
+  font-weight: 600;
+}
+
+.hero-text p .prompt-hover:hover {
+  color: var(--text);
+  text-decoration-color: var(--home-accent-bright);
+  text-shadow: 0 0 8px rgba(163, 163, 163, 0.3);
+}
+
+/* Botão CTA modernizado */
+.hero-text .btn {
+  align-self: flex-start;
+  padding: 1rem var(--space-4);
+  font-size: 1.125rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, rgba(82, 82, 82, 0.9) 0%, rgba(115, 115, 115, 0.8) 100%);
+  border: 1.5px solid rgba(163, 163, 163, 0.3);
+  border-radius: 12px;
+  color: var(--text);
+  box-shadow: 0 4px 12px var(--home-shadow);
+  transition: all var(--transition-fast);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out 0.3s backwards;
+}
+
+
+
+.hero-text .btn:active {
+  transform: translateY(0);
+  transition: transform 0.1s ease;
+}
+
+.hero-text .btn::after {
+  content: '→';
+  margin-left: var(--space-2);
+  display: inline-block;
+  transition: transform var(--transition-fast);
+}
+
+.hero-text .btn:hover::after {
+  transform: translateX(2px);
+}
+
+/* --- Card flutuante do prompt --- */
+.prompt-hover {
+  cursor: default;
+}
+
+.prompt-card {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  z-index: 1001;
+  flex-direction: column;
+  max-width: 520px;
+  width: 90%;
+  max-height: 65vh;
+  overflow: hidden;
+  padding: var(--space-4);
+  border: 1.5px solid rgba(163, 163, 163, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--home-shadow-hover);
+  background: linear-gradient(135deg, var(--home-card-bg) 0%, rgba(15, 15, 15, 0.98) 100%);
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+.prompt-card.visible {
+  display: flex;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  animation: promptCardIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prompt-card-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid rgba(163, 163, 163, 0.2);
+}
+
+.prompt-card-copy {
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--home-accent);
+  background: rgba(163, 163, 163, 0.1);
+  border: 1px solid rgba(163, 163, 163, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem var(--space-2);
+  font-family: inherit;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.prompt-card-copy:hover {
+  color: var(--text);
+  background: rgba(163, 163, 163, 0.2);
+  border-color: var(--home-accent);
+  transform: translateY(-1px);
+}
+
+.prompt-card-copy:active {
+  transform: translateY(0);
+}
+
+.prompt-card-close {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--home-accent);
+  background: rgba(163, 163, 163, 0.1);
+  border: 1px solid rgba(163, 163, 163, 0.2);
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  font-family: inherit;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.prompt-card-close:hover {
+  color: var(--text);
+  background: rgba(163, 163, 163, 0.2);
+  border-color: var(--home-accent);
+  transform: rotate(90deg);
+}
+
+.prompt-card-body {
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  padding-right: var(--space-2);
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* Estilos Markdown para o card do prompt (mesmos estilos das aulas) */
+.prompt-card-body h1,
+.prompt-card-body h2,
+.prompt-card-body h3 {
+  margin: var(--space-3) 0 var(--space-2);
+  font-weight: 700;
+}
+
+.prompt-card-body h1 { font-size: 1.5rem; }
+.prompt-card-body h2 { font-size: 1.25rem; }
+.prompt-card-body h3 { font-size: 1.125rem; }
+
+.prompt-card-body p {
+  margin: 0 0 0.75rem;
+}
+
+.prompt-card-body ul,
+.prompt-card-body ol {
+  margin: 0 0 0.75rem;
+  padding-left: var(--space-3);
+}
+
+.prompt-card-body li {
+  margin: var(--space-1) 0;
+}
+
+.prompt-card-body hr {
+  border: none;
+  border-top: 1px solid rgba(163, 163, 163, 0.3);
+  margin: var(--space-3) 0;
+}
+
+.prompt-card-body strong {
+  font-weight: 700;
+}
+
+.prompt-card-body code {
+  background: rgba(163, 163, 163, 0.15);
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: 'Courier New', monospace;
+}
+
+.prompt-card-body pre {
+  background: rgba(163, 163, 163, 0.1);
+  padding: var(--space-2);
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 0 0 0.75rem;
+}
+
+.prompt-card-body pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* Scrollbar personalizada para o card */
+.prompt-card-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.prompt-card-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.prompt-card-body::-webkit-scrollbar-thumb {
+  background: rgba(163, 163, 163, 0.3);
+  border-radius: 4px;
+}
+
+.prompt-card-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(163, 163, 163, 0.5);
+}
+
+/* --- Animações --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes promptCardIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 48rem) {
+  .home-main {
+    background-attachment: scroll;
+  }
+
+  .home-main .hero-inner.layout-container {
+    margin-left: var(--space-3);
+    padding-left: var(--space-3);
+  }
+
+  .hero-text {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    text-align: center;
+  }
+
+  .hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .hero-text .btn {
+    align-self: center;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prompt-card {
+    max-width: 95%;
+    padding: var(--space-3);
+  }
+
+  .prompt-card-copy,
+  .prompt-card-close {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 30rem) {
+  .hero {
+    padding: clamp(var(--space-3), 6vh, var(--space-4)) 0;
+  }
+
+  .hero-text h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-text .btn {
+    padding: 0.875rem var(--space-3);
+    font-size: 1rem;
+  }
+
+  .prompt-card {
+    padding: var(--space-2);
+    max-height: 70vh;
+  }
+
+  .prompt-card-header {
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+
+  .prompt-card-copy,
+  .prompt-card-close {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+
+  .prompt-card-copy {
+    font-size: 0.8125rem;
+    padding: 0.4rem var(--space-1);
+  }
+}

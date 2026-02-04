@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0A0A0A;
+  --text: #E5E5E5;
+  --secondary: #525252;
+  --shadow: #737373;
+  --font: 'Lato', sans-serif;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --radius: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.layout-main {
+  padding-top: 3rem;
+  min-height: 100vh;
+}
+
+.layout-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.layout-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  z-index: 100;
+  background-color: transparent;
+}
+
+.layout-navbar a {
+  padding: var(--space-1) 0;
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 0.7;
+  position: relative;
+}
+
+.layout-navbar a:hover {
+  opacity: 1;
+}
+
+.layout-navbar a.active {
+  opacity: 1;
+}
+
+.layout-navbar a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--text);
+  opacity: 0.85;
+}
+
+.layout-navbar-right {
+  justify-content: flex-end;
+  padding-right: var(--space-3);
+}
+
+.layout-logo {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  z-index: 101;
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.layout-logo:hover {
+  opacity: 0.8;
+}
+
+.layout-logo img {
+  height: 1.6rem;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 40rem) {
+  .layout-logo {
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .layout-logo img {
+    height: 2.25rem;
+  }
+
+  .layout-navbar {
+    gap: var(--space-2);
+    padding-left: 4rem;
+  }
+
+  .layout-navbar-right {
+    padding-right: var(--space-2);
+  }
+
+  .layout-navbar a {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  .layout-logo {
+    padding: var(--space-1) var(--space-1);
+  }
+
+  .layout-logo img {
+    height: 1.75rem;
+  }
+
+  .layout-navbar {
+    gap: var(--space-1);
+    padding-left: 3.5rem;
+  }
+
+  .layout-navbar-right {
+    padding-right: var(--space-1);
+  }
+
+  .layout-navbar a {
+    font-size: 0.8125rem;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem var(--space-3);
+  background-color: var(--secondary);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.ui-card {
+  border: 1px solid var(--secondary);
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.padding-0 { padding: 0; }
+.padding-1 { padding: var(--space-1); }
+.padding-2 { padding: var(--space-2); }
+.padding-3 { padding: var(--space-3); }
+
+.margin-0 { margin: 0; }
+.margin-1 { margin: var(--space-1); }
+.margin-2 { margin: var(--space-2); }
+
+.layout-footer {
+  border-top: 1px solid var(--secondary);
+  background-color: var(--bg);
+  color: var(--text);
+  padding: var(--space-3) var(--space-2);
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: auto;
+}
+
+.layout-footer a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.layout-footer a:hover {
+  color: #FFF;
+  border-bottom-color: #FFF;
+}
+
+@media (max-width: 48rem) {
+  .layout-footer {
+    padding: var(--space-3) var(--space-3);
+    font-size: 0.875rem;
+  }
+}

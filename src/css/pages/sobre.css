@@ -1,0 +1,123 @@
+.sobre-main {
+  padding-top: 3rem;
+  min-height: 100vh;
+  display: flex;
+  background-image: url('../../../public/images/PzLaptopBlur.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.sobre-main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.9));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.sobre-main > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-content {
+  padding: clamp(var(--space-3), 5vh, var(--space-4)) var(--space-3) var(--space-4);
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+.sobre-section {
+  padding-top: var(--space-3);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.sobre-section:nth-of-type(1) { animation-delay: 0.05s; }
+.sobre-section:nth-of-type(2) { animation-delay: 0.12s; }
+.sobre-section:nth-of-type(3) { animation-delay: 0.19s; }
+.sobre-section:nth-of-type(4) { animation-delay: 0.26s; }
+.sobre-section:nth-of-type(5) { animation-delay: 0.33s; }
+
+.sobre-section + .sobre-section {
+  border-top: 1px solid var(--secondary);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+}
+
+.sobre-section h1,
+.sobre-section h2 {
+  margin: 0 0 var(--space-2);
+  font-weight: 700;
+}
+
+.sobre-section h1 {
+  font-size: 1.75rem;
+}
+
+.sobre-section h2 {
+  font-size: 1.4rem;
+}
+
+.sobre-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-1);
+}
+
+.sobre-section p {
+  margin: 0 0 var(--space-2);
+  max-width: 42rem;
+}
+
+.sobre-subsection {
+  margin-top: var(--space-2);
+}
+
+.sobre-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 var(--space-2);
+}
+
+.sobre-list li + li {
+  margin-top: 0.35rem;
+}
+
+.sobre-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sobre-link:hover {
+  opacity: 0.9;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sobre-section {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 40rem) {
+  .page-content {
+    padding: var(--space-3) var(--space-2) var(--space-4);
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre</title>
+  <link rel="icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="shortcut icon" type="image/jpeg" href="public/images/PzIcon.jpg?v=1">
+  <link rel="stylesheet" href="src/css/global.css">
+  <link rel="stylesheet" href="src/css/pages/sobre.css">
+</head>
+<body>
+  <a href="index.html" class="layout-logo" aria-label="Página inicial">
+    <img src="public/images/PzLogo.png" alt="Pz Infinet Logo">
+  </a>
+  <nav class="layout-navbar layout-navbar-right">
+    <a href="index.html">Home</a>
+    <a href="resumos.html">Resumos</a>
+    <a href="sobre.html" class="active">Sobre</a>
+  </nav>
+
+  <main class="layout-main sobre-main">
+    <div class="layout-container page-content" aria-labelledby="sobre-titulo">
+      <section class="sobre-section" id="o-que-e">
+        <h1 id="sobre-titulo">Sobre o projeto</h1>
+        <p>Este é um site educacional estático que transforma transcrições de aulas em material de estudo estruturado e consultável.</p>
+        <p>O objetivo é simples: reduzir o tempo de revisão e o esforço de extração de conteúdo. Em vez de reassistir aulas longas ou reler transcrições extensas, você acessa resumos padronizados, organizados por disciplina e por aula.</p>
+        <p>O foco é estudo operacional, localizar conceitos, revisar rapidamente e consolidar entendimento.</p>
+      </section>
+
+      <section class="sobre-section" id="por-que-existe">
+        <h2>Problema que ele resolve</h2>
+        <p>Aulas gravadas e transcrições completas são úteis, mas pouco eficientes para revisão. Encontrar pontos específicos exige tempo e atenção desnecessários.</p>
+        <p>Este projeto reduz custo cognitivo ao converter material bruto em resumos estruturados, com seções fixas, conceitos-chave e organização consistente.</p>
+      </section>
+
+
+
+      <section class="sobre-section" id="como-funciona">
+        <h2>Como funciona</h2>
+        <p>Fluxo de processamento:</p>
+        <ul class="sobre-list">
+          <li>Aula gravada (vídeo ou áudio)</li>
+          <li>Transcrição completa</li>
+          <li>Processamento com prompt padronizado</li>
+          <li>Geração de resumo estruturado em Markdown</li>
+          <li>Renderização no site com HTML, CSS e JavaScript</li>
+        </ul>
+        <p>Sem banco de dados. Sem backend. Conteúdo versionado.</p>
+      </section>
+
+      <section class="sobre-section" id="onde-vive">
+        <h2>Repositório e código</h2>
+        <p>O projeto é mantido em repositório público no GitHub. Código, estrutura e resumos em Markdown vivem no mesmo lugar e são versionados.</p>
+        <p>O site é publicado via GitHub Pages a partir desse repositório.</p>
+      </section>
+
+      <section class="sobre-section" id="como-contribuir">
+        <h2>Como contribuir</h2>
+        <p>Você pode contribuir de três formas objetivas:</p>
+        <ul class="sobre-list">
+          <li>corrigindo erros técnicos nos resumos</li>
+          <li>melhorando clareza ou organização de seções</li>
+          <li>adicionando novos resumos no formato padrão do projeto</li>
+        </ul>
+        <p>As contribuições são feitas via Pull Request com arquivos .md, seguindo o template estrutural existente.</p>
+      </section>
+
+
+    </div>
+  </main>
+
+  <footer class="layout-footer">
+    <p>Este projeto foi útil? Deixe uma <a href="https://github.com/GaabDevWeb/infinetStudySummaries" target="_blank" rel="noopener noreferrer">estrela no GitHub</a> ⭐</p>
+  </footer>
+
+  <script src="src/js/global.js"></script>
+</body>
+</html>
