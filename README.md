@@ -185,13 +185,7 @@ Sem esse passo, novas aulas não aparecem na navegação.
 - helpers reutilizáveis → `global.js`
 - estilos de página → `src/css/pages/`
 - evitar lógica global específica de página
-
-Se alterar arquitetura ou fluxo, atualizar [ARCHITECTURE.md](ARCHITECTURE.md).
-
-## Documentação adicional
-
-Detalhes de decisões estruturais: [ARCHITECTURE.md](ARCHITECTURE.md)
-
+- 
 ---
 
 Se o projeto foi útil para seus estudos, deixe uma estrela ⭐ no repositório.
