@@ -13,11 +13,11 @@ window.DISCIPLINAS = [
   {
     id: 'dados-sql',
     nome: 'Dados e SQL',
-    aulas: ['aula1', 'aula2', 'aula3']
+    aulas: ['aula1', 'aula2', 'aula3', 'aula4']
   },
   {
     id: 'programacao',
     nome: 'Programação em Python',
-    aulas: ['aula1', 'aula2', 'aula3']
+    aulas: ['aula1', 'aula2', 'aula3', 'aula4']
   }
 ];
