@@ -18,6 +18,6 @@ window.DISCIPLINAS = [
   {
     id: 'programacao',
     nome: 'Programação em Python',
-    aulas: ['aula1', 'aula2', 'aula3', 'aula4']
+    aulas: ['aula1', 'aula2', 'aula3', 'aula4', 'aula5']
   }
 ];
