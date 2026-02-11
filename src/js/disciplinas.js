@@ -8,7 +8,7 @@ window.DISCIPLINAS = [
   {
     id: 'planejamento-carreira',
     nome: 'Planejamento de Carreira',
-    aulas: ['aula1', 'aula2']
+    aulas: ['aula1', 'aula2', 'aula3']
   },
   {
     id: 'dados-sql',
