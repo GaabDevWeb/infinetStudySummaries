@@ -1,3 +1,12 @@
+DISCIPLINA: Planejamento de Curso e Carreira  
+PROFESSOR: Marina Vergili  
+DATA DA AULA: 03/02/2026  
+TEMA DA AULA: Atividades complementares, presença, estágio e matriz SWOT para planejamento de carreira  
+TIPO: Aula expositiva  
+ORIGEM: https://drive.google.com/file/d/1KrUE--rth68WWJ6oWUIMTuC4TLzzzE_x/view
+
+---
+
 ## 1. Tema e Escopo
 
 - **Tema**: Currículo, LinkedIn e estratégias de inserção e transição de carreira em tecnologia.
