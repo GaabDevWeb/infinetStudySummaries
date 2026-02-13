@@ -3,7 +3,7 @@ window.DISCIPLINAS = [
   {
     id: 'projeto-processamento-dados',
     nome: 'Projeto de Processamento de Dados',
-    aulas: []
+    aulas: ['aula1', 'aula2']
   },
   {
     id: 'planejamento-carreira',
@@ -13,7 +13,7 @@ window.DISCIPLINAS = [
   {
     id: 'dados-sql',
     nome: 'Dados e SQL',
-    aulas: ['aula1', 'aula2', 'aula3', 'aula4', 'aula5']
+    aulas: ['aula1', 'aula2', 'aula3', 'aula4', 'aula5', 'aula6']
   },
   {
     id: 'programacao',
