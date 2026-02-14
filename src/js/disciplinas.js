@@ -3,7 +3,7 @@ window.DISCIPLINAS = [
   {
     id: 'projeto-processamento-dados',
     nome: 'Projeto de Processamento de Dados',
-    aulas: ['aula1', 'aula2']
+    aulas: ['aula1', 'aula2', 'aula3']
   },
   {
     id: 'planejamento-carreira',
